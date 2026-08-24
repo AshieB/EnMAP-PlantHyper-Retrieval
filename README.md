@@ -1,19 +1,9 @@
 # PlantHyper: Hybrid MLP Inversion for Hyperspectral Biophysical Trait Retrieval
 
 This repository contains the official code, dataset processing scripts, benchmark evaluation metrics, and figure generation pipelines for our submission to *Electronic Letters on Computer Vision and Image Analysis* (ELCVIA).
-
-## 📌 Repository Overview
-
-The code provided here enables full end-to-end reproducibility of the figures, tables, and spatial retrieval maps presented in Section 4 of the manuscript:
-
-* **Model Architecture**: Multi-Layer Perceptron (MLP) hybrid inversion with standard feature scaling and PCA bottleneck reduction ($n=15$).
-* **Target Traits**: Leaf Area Index ($\text{LAI}$), Canopy Chlorophyll Content ($\text{C}_{ab}$), Equivalent Water Thickness ($\text{C}_w$), and Canopy Dry Matter ($\text{C}_m$).
-* **Spatial Processing**: EnMAP Level-2A BOA reflectance raster ingestion, vegetation masking ($\text{NDVI} \ge 0.30$), spatial feature rendering, and publication-ready cartographic export.
-
-
-
 ## 📁 Repository Structure
 
+```text
 EnMAP-PlantHyper-Retrieval/
 ├── data/                  # Field validation dataset
 │   └── insitu_data.csv    # In situ canopy & leaf trait ground truth
@@ -29,6 +19,16 @@ EnMAP-PlantHyper-Retrieval/
 ├── main.py                # Single script to execute the complete retrieval pipeline
 ├── README.md              # Project overview, installation, and Zenodo DOI
 └── requirements.txt       # Python package dependencies
+
+## 📌 Repository Overview
+
+The code provided here enables full end-to-end reproducibility of the figures, tables, and spatial retrieval maps presented in Section 4 of the manuscript:
+
+* **Model Architecture**: Multi-Layer Perceptron (MLP) hybrid inversion with standard feature scaling and PCA bottleneck reduction ($n=15$).
+* **Target Traits**: Leaf Area Index ($\text{LAI}$), Canopy Chlorophyll Content ($\text{C}_{ab}$), Equivalent Water Thickness ($\text{C}_w$), and Canopy Dry Matter ($\text{C}_m$).
+* **Spatial Processing**: EnMAP Level-2A BOA reflectance raster ingestion, vegetation masking ($\text{NDVI} \ge 0.30$), spatial feature rendering, and publication-ready cartographic export.
+
+
 
 
 ## 📥 Data Download & Setup
