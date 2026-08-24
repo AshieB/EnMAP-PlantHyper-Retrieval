@@ -10,12 +10,9 @@ The code provided here enables full end-to-end reproducibility of the figures, t
 * **Target Traits**: Leaf Area Index ($\text{LAI}$), Canopy Chlorophyll Content ($\text{C}_{ab}$), Equivalent Water Thickness ($\text{C}_w$), and Canopy Dry Matter ($\text{C}_m$).
 * **Spatial Processing**: EnMAP Level-2A BOA reflectance raster ingestion, vegetation masking ($\text{NDVI} \ge 0.30$), spatial feature rendering, and publication-ready cartographic export.
 
----
+
 
 ## 📁 Repository Structure
-
-## 📁 Repository Structure
-
 
 EnMAP-PlantHyper-Retrieval/
 ├── data/                  # Field validation dataset
@@ -24,12 +21,15 @@ EnMAP-PlantHyper-Retrieval/
 │   ├── figures/           # Generated validation plots & manuscript figures
 │   └── trait_maps/        # Predicted biophysical parameter maps
 ├── src/                   # PlantHyper main pipeline modules
-│   │   ├── pipeline.py        # Core PlantHyper inversion and workflow logic
+│   ├── __init__.py
+│   ├── pipeline.py        # Core PlantHyper inversion and workflow logic
 │   ├── preprocessing.py   # Spectral calibration and in situ data alignment
 │   └── evaluation.py     # Accuracy metrics (RMSE, R², MAE) computation
-├── .gitignore             # Ignores large .bsq rasters and temporary files        
+├── .gitignore             # Ignores large .bsq rasters and temporary files
+├── main.py                # Single script to execute the complete retrieval pipeline
 ├── README.md              # Project overview, installation, and Zenodo DOI
 └── requirements.txt       # Python package dependencies
+
 
 ## 📥 Data Download & Setup
 The raw EnMAP hyperspectral dataset (`ENMAP01-____L2A-SPECTRAL_IMAGE.bsq`) is hosted on Zenodo:
