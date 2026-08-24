@@ -28,3 +28,10 @@ The code provided here enables full end-to-end reproducibility of the figures, t
 │   └── Figure_4_3_PlantHyper_Retrieved_Biophysical_Trait_Maps_ELCVIA.pdf
 ├── requirements.txt                             # Dependencies manifest
 └── README.md                                    # Repository documentation
+
+## 📥 Data Download & Setup
+The raw EnMAP hyperspectral dataset (`ENMAP01-____L2A-SPECTRAL_IMAGE.bsq`) is hosted on Zenodo:
+[![DOI]( https://doi.org/10.5281/zenodo.22078009)
+
+1. Download the `.bsq` file from the Zenodo link above.
+2. Place it in the `data/` folder of this repository before running `main.py`.
