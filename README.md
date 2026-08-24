@@ -14,20 +14,22 @@ The code provided here enables full end-to-end reproducibility of the figures, t
 
 ## 📁 Repository Structure
 
-```text
-├── main.py                                      # Master script for tables & 600 DPI figure generation
-├── insitu_data.csv                              # Validation ground data (n = 112 sample points)
-├── data/
-│   └── ENMAP01-____L2A-SPECTRAL_IMAGE.bsq       # EnMAP BOA spectral image (subset sample)
-├── outputs/
-│   ├── Table_4_Algorithmic_Performance.csv      # Comparative metrics (SVR vs. RFR vs. PlantHyper)
-│   ├── Table_5_Residual_Analysis.csv           # Detailed residual & error driver breakdown
-│   ├── Figure_4_1_LAI_Scatter.pdf               # LAI validation scatter plot (Vector & PNG)
-│   ├── Figure_4_2_Cab_Scatter.pdf               # Cab validation scatter plot (Vector & PNG)
-│   ├── Figure_4_3_Pandamatenga_Spatial_Workflow.pdf
-│   └── Figure_4_3_PlantHyper_Retrieved_Biophysical_Trait_Maps_ELCVIA.pdf
-├── requirements.txt                             # Dependencies manifest
-└── README.md                                    # Repository documentation
+## 📁 Repository Structure
+
+
+EnMAP-PlantHyper-Retrieval/
+├── data/                  # Field validation dataset
+│   └── insitu_data.csv    # In situ canopy & leaf trait ground truth
+├── outputs/               # Pipeline execution results
+│   ├── figures/           # Generated validation plots & manuscript figures
+│   └── trait_maps/        # Predicted biophysical parameter maps
+├── src/                   # PlantHyper main pipeline modules
+│   │   ├── pipeline.py        # Core PlantHyper inversion and workflow logic
+│   ├── preprocessing.py   # Spectral calibration and in situ data alignment
+│   └── evaluation.py     # Accuracy metrics (RMSE, R², MAE) computation
+├── .gitignore             # Ignores large .bsq rasters and temporary files        
+├── README.md              # Project overview, installation, and Zenodo DOI
+└── requirements.txt       # Python package dependencies
 
 ## 📥 Data Download & Setup
 The raw EnMAP hyperspectral dataset (`ENMAP01-____L2A-SPECTRAL_IMAGE.bsq`) is hosted on Zenodo:
