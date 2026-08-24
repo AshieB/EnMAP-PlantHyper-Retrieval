@@ -1,25 +1,30 @@
-# PlantHyper: Spaceborne EnMAP Biophysical Trait Retrieval Pipeline
+# PlantHyper: Hybrid MLP Inversion for Hyperspectral Biophysical Trait Retrieval
 
-This repository contains the official Python implementation of the **PlantHyper** deep hybrid MLP architecture for estimating crop biophysical parameters from spaceborne EnMAP hyperspectral imagery. The pipeline extracts spectral signatures at in-situ ground-truth locations, trains baseline machine learning regressors alongside PlantHyper, and exports pixel-wise continuous raster maps across agricultural study sites.
+This repository contains the official code, dataset processing scripts, benchmark evaluation metrics, and figure generation pipelines for our submission to *Electronic Letters on Computer Vision and Image Analysis* (ELCVIA).
 
-## Target Biophysical Variables
+## 📌 Repository Overview
 
-* **LAI:** Leaf Area Index ($\text{m}^2\ \text{m}^{-2}$)
-* **Cab:** Leaf Chlorophyll Content ($\mu\text{g}\ \text{cm}^{-2}$)
-* **Cm:** Leaf Dry Matter Content ($\text{g}\ \text{cm}^{-2}$)
-* **Cw:** Canopy Equivalent Water Thickness ($\text{cm}$)
+The code provided here enables full end-to-end reproducibility of the figures, tables, and spatial retrieval maps presented in Section 4 of the manuscript:
+
+* **Model Architecture**: Multi-Layer Perceptron (MLP) hybrid inversion with standard feature scaling and PCA bottleneck reduction ($n=15$).
+* **Target Traits**: Leaf Area Index ($\text{LAI}$), Canopy Chlorophyll Content ($\text{C}_{ab}$), Equivalent Water Thickness ($\text{C}_w$), and Canopy Dry Matter ($\text{C}_m$).
+* **Spatial Processing**: EnMAP Level-2A BOA reflectance raster ingestion, vegetation masking ($\text{NDVI} \ge 0.30$), spatial feature rendering, and publication-ready cartographic export.
 
 ---
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
+├── main.py                                      # Master script for tables & 600 DPI figure generation
+├── insitu_data.csv                              # Validation ground data (n = 112 sample points)
 ├── data/
-│   ├── ENMAP01-____L2A-...-SPECTRAL_IMAGE.bsq   # EnMAP L2A hyperspectral scene (not tracked in Git)
-│   └── insitu_data.csv                          # In-situ ground truth validation measurements
-├── outputs/                                     # Exported high-resolution figures and rasters
-├── src/
-│   └── main_pipeline.py                         # Spectral extraction, model training, and extrapolation script
-├── .gitignore                                   # Excludes large imagery rasters and outputs
-├── requirements.txt                             # Python package dependencies
-└── README.md                                    # Project documentation
+│   └── ENMAP01-____L2A-SPECTRAL_IMAGE.bsq       # EnMAP BOA spectral image (subset sample)
+├── outputs/
+│   ├── Table_4_Algorithmic_Performance.csv      # Comparative metrics (SVR vs. RFR vs. PlantHyper)
+│   ├── Table_5_Residual_Analysis.csv           # Detailed residual & error driver breakdown
+│   ├── Figure_4_1_LAI_Scatter.pdf               # LAI validation scatter plot (Vector & PNG)
+│   ├── Figure_4_2_Cab_Scatter.pdf               # Cab validation scatter plot (Vector & PNG)
+│   ├── Figure_4_3_Pandamatenga_Spatial_Workflow.pdf
+│   └── Figure_4_3_PlantHyper_Retrieved_Biophysical_Trait_Maps_ELCVIA.pdf
+├── requirements.txt                             # Dependencies manifest
+└── README.md                                    # Repository documentation
