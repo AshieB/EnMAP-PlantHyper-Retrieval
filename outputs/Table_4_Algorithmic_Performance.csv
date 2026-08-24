@@ -1,0 +1,7 @@
+Inversion Algorithm Architecture,Target Trait,R2,RMSE,RRMSE (%),MAE
+Support Vector Regression (SVR),LAI,0.7421,0.31,16.0,0.24
+Support Vector Regression (SVR),Cab,0.7195,5.62,14.1,4.2
+Random Forest Regressor (RFR),LAI,0.7615,0.29,15.0,0.22
+Random Forest Regressor (RFR),Cab,0.7382,5.18,13.0,3.86
+PlantHyper Hybrid MLP (This Work),LAI,0.8128,0.24,12.4,0.18
+PlantHyper Hybrid MLP (This Work),Cab,0.79,4.21,10.6,3.15

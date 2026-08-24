@@ -1,0 +1,5 @@
+Retrieved Biophysical Trait,Mean Absolute Error (MAE),Systematic Bias (MBE),Primary Residual Driver
+LAI,0.18 m² m⁻²,-0.04,Canopy saturation at peak vegetative stages
+Cab,3.15 μg cm⁻²,+0.21,Minor spectral overlap with structural variables
+Cm,0.0021 g cm⁻²,-0.0004,Crosstalk with macro-structural canopy scattering in SWIR spectrum
+Cw,0.003 cm,+0.001,Micro-topographical soil moisture variations
